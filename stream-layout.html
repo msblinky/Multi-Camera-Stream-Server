@@ -1,0 +1,586 @@
+/*<!--
+Multi-Camera-Stream-Server
+
+                   GNU LESSER GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+
+  This version of the GNU Lesser General Public License incorporates
+the terms and conditions of version 3 of the GNU General Public
+License, supplemented by the additional permissions listed below.
+
+  0. Additional Definitions.
+
+  As used herein, "this License" refers to version 3 of the GNU Lesser
+General Public License, and the "GNU GPL" refers to version 3 of the GNU
+General Public License.
+
+  "The Library" refers to a covered work governed by this License,
+other than an Application or a Combined Work as defined below.
+
+  An "Application" is any work that makes use of an interface provided
+by the Library, but which is not otherwise based on the Library.
+Defining a subclass of a class defined by the Library is deemed a mode
+of using an interface provided by the Library.
+
+  A "Combined Work" is a work produced by combining or linking an
+Application with the Library.  The particular version of the Library
+with which the Combined Work was made is also called the "Linked
+Version".
+
+  The "Minimal Corresponding Source" for a Combined Work means the
+Corresponding Source for the Combined Work, excluding any source code
+for portions of the Combined Work that, considered in isolation, are
+based on the Application, and not on the Linked Version.
+
+  The "Corresponding Application Code" for a Combined Work means the
+object code and/or source code for the Application, including any data
+and utility programs needed for reproducing the Combined Work from the
+Application, but excluding the System Libraries of the Combined Work.
+
+  1. Exception to Section 3 of the GNU GPL.
+
+  You may convey a covered work under sections 3 and 4 of this License
+without being bound by section 3 of the GNU GPL.
+
+  2. Conveying Modified Versions.
+
+  If you modify a copy of the Library, and, in your modifications, a
+facility refers to a function or data to be supplied by an Application
+that uses the facility (other than as an argument passed when the
+facility is invoked), then you may convey a copy of the modified
+version:
+
+   a) under this License, provided that you make a good faith effort to
+   ensure that, in the event an Application does not supply the
+   function or data, the facility still operates, and performs
+   whatever part of its purpose remains meaningful, or
+
+   b) under the GNU GPL, with none of the additional permissions of
+   this License applicable to that copy.
+
+  3. Object Code Incorporating Material from Library Header Files.
+
+  The object code form of an Application may incorporate material from
+a header file that is part of the Library.  You may convey such object
+code under terms of your choice, provided that, if the incorporated
+material is not limited to numerical parameters, data structure
+layouts and accessors, or small macros, inline functions and templates
+(ten or fewer lines in length), you do both of the following:
+
+   a) Give prominent notice with each copy of the object code that the
+   Library is used in it and that the Library and its use are
+   covered by this License.
+
+   b) Accompany the object code with a copy of the GNU GPL and this license
+   document.
+
+  4. Combined Works.
+
+  You may convey a Combined Work under terms of your choice that,
+taken together, effectively do not restrict modification of the
+portions of the Library contained in the Combined Work and reverse
+engineering for debugging such modifications, if you also do each of
+the following:
+
+   a) Give prominent notice with each copy of the Combined Work that
+   the Library is used in it and that the Library and its use are
+   covered by this License.
+
+   b) Accompany the Combined Work with a copy of the GNU GPL and this license
+   document.
+
+   c) For a Combined Work that displays copyright notices during
+   execution, include the copyright notice for the Library among
+   these notices, as well as a reference directing the user to the
+   copies of the GNU GPL and this license document.
+
+   d) Do one of the following:
+
+       0) Convey the Minimal Corresponding Source under the terms of this
+       License, and the Corresponding Application Code in a form
+       suitable for, and under terms that permit, the user to
+       recombine or relink the Application with a modified version of
+       the Linked Version to produce a modified Combined Work, in the
+       manner specified by section 6 of the GNU GPL for conveying
+       Corresponding Source.
+
+       1) Use a suitable shared library mechanism for linking with the
+       Library.  A suitable mechanism is one that (a) uses at run time
+       a copy of the Library already present on the user's computer
+       system, and (b) will operate properly with a modified version
+       of the Library that is interface-compatible with the Linked
+       Version.
+
+   e) Provide Installation Information, but only if you would otherwise
+   be required to provide such information under section 6 of the
+   GNU GPL, and only to the extent that such information is
+   necessary to install and execute a modified version of the
+   Combined Work produced by recombining or relinking the
+   Application with a modified version of the Linked Version. (If
+   you use option 4d0, the Installation Information must accompany
+   the Minimal Corresponding Source and Corresponding Application
+   Code. If you use option 4d1, you must provide the Installation
+   Information in the manner specified by section 6 of the GNU GPL
+   for conveying Corresponding Source.)
+
+  5. Combined Libraries.
+
+  You may place library facilities that are a work based on the
+Library side by side in a single library together with other library
+facilities that are not Applications and are not covered by this
+License, and convey such a combined library under terms of your
+choice, if you do both of the following:
+
+   a) Accompany the combined library with a copy of the same work based
+   on the Library, uncombined with any other library facilities,
+   conveyed under the terms of this License.
+
+   b) Give prominent notice with the combined library that part of it
+   is a work based on the Library, and explaining where to find the
+   accompanying uncombined form of the same work.
+
+  6. Revised Versions of the GNU Lesser General Public License.
+
+  The Free Software Foundation may publish revised and/or new versions
+of the GNU Lesser General Public License from time to time. Such new
+versions will be similar in spirit to the present version, but may
+differ in detail to address new problems or concerns.
+
+  Each version is given a distinguishing version number. If the
+Library as you received it specifies that a certain numbered version
+of the GNU Lesser General Public License "or any later version"
+applies to it, you have the option of following the terms and
+conditions either of that published version or of any later version
+published by the Free Software Foundation. If the Library as you
+received it does not specify a version number of the GNU Lesser
+General Public License, you may choose any version of the GNU Lesser
+General Public License ever published by the Free Software Foundation.
+
+  If the Library as you received it specifies that a proxy can decide
+whether future versions of the GNU Lesser General Public License shall
+apply, that proxy's public statement of acceptance of any version is
+permanent authorization for you to choose that version for the
+Library.
+
+ */
+/**
+ * Multi-Camera-Stream-Server
+ * Copyright (C) <2026>  <Ms. Blinky>
+ * Follow me on Twitch https://www.twitch.tv/ms_blinky
+ * info@peek-and-poke-media.de
+ * @author Ms. Blinky 
+ */
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stream Layout</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gap: 6px;
+    --accent: #00f0ff;
+    --accent2: #ff2d78;
+    --bg: #0a0a10;
+    --lf: 'Share Tech Mono', monospace;
+    --sidebar-w: 28%;
+  }
+
+  html, body { width: 100%; height: 100%; background: var(--bg); overflow: hidden; }
+
+  #layout {
+    display: grid;
+    width: 100vw; height: 100vh;
+    grid-template-columns: 1fr var(--sidebar-w);
+    gap: var(--gap); padding: var(--gap);
+  }
+
+  #right-col { display: grid; grid-template-rows: 1fr 1fr; gap: var(--gap); }
+
+  .slot {
+    position: relative; background: #000;
+    border: 1px solid #1c1c2a; overflow: hidden; border-radius: 4px;
+  }
+  .slot video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  #main-slot.crt::after {
+    content: ''; position: absolute; inset: 0;
+    background: repeating-linear-gradient(to bottom, transparent 0px, transparent 3px, rgba(0,0,0,0.07) 3px, rgba(0,0,0,0.07) 4px);
+    pointer-events: none; z-index: 2;
+  }
+
+  .corner-tl, .corner-br { position: absolute; width: 20px; height: 20px; pointer-events: none; z-index: 3; }
+  .corner-tl { top: 10px; left: 10px; border-top: 2px solid var(--accent); border-left: 2px solid var(--accent); }
+  .corner-br { bottom: 10px; right: 10px; border-bottom: 2px solid var(--accent2); border-right: 2px solid var(--accent2); }
+
+  .rec {
+    position: absolute; top: 12px; right: 14px; z-index: 5;
+    display: flex; align-items: center; gap: 6px;
+    font-family: var(--lf); font-size: 11px; color: var(--accent2);
+    letter-spacing: 0.12em; pointer-events: none;
+  }
+  .rec .dot {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--accent2);
+    animation: blink 1.2s step-start infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .cam-label {
+    position: absolute; bottom: 8px; left: 10px;
+    font-family: var(--lf); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.7); background: rgba(0,0,0,0.5);
+    padding: 2px 7px; border-radius: 2px; pointer-events: none; z-index: 4;
+  }
+
+  .no-signal {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+    color: #2a2a3a; font-family: var(--lf); font-size: 11px;
+    letter-spacing: 0.1em; text-transform: uppercase; pointer-events: none;
+  }
+
+  .swap-btn {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0; transition: opacity 0.16s, transform 0.16s;
+    background: rgba(0,0,0,0.75); border: 1px solid var(--accent);
+    color: var(--accent); font-family: var(--lf); font-size: 11px;
+    letter-spacing: 0.1em; padding: 7px 14px;
+    cursor: pointer; border-radius: 3px; white-space: nowrap; z-index: 10;
+  }
+  .swap-btn:hover { background: var(--accent); color: #000; }
+  .slot:hover .swap-btn { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+  /* ── Config panel ── */
+  #config-toggle {
+    position: fixed; bottom: 14px; right: 14px; z-index: 100; display: none;
+    background: rgba(0,0,0,0.75); border: 1px solid #2a2a3a;
+    color: #555; font-family: var(--lf); font-size: 11px;
+    letter-spacing: 0.1em; padding: 6px 12px; cursor: pointer; border-radius: 3px;
+  }
+  #config-toggle:hover { color: var(--accent); border-color: var(--accent); }
+
+  #config-panel {
+    position: fixed; bottom: 50px; right: 14px; z-index: 100;
+    background: #0d0d1a; border: 1px solid #2a2a3a; border-radius: 6px;
+    padding: 18px 20px; width: 300px; display: none;
+    font-family: var(--lf); font-size: 12px; color: #888;
+  }
+  #config-panel.open { display: block; }
+  #config-panel h3 { font-size: 11px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+
+  /* password gate */
+  #pw-gate, #cam-form { width: 100%; }
+  #cam-form { display: none; }
+
+  .config-row { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .config-row label { width: 60px; font-size: 11px; color: #555; }
+  .config-row select, .config-row input[type=password] {
+    flex: 1; background: #111; border: 1px solid #2a2a3a;
+    color: #ccc; font-family: var(--lf); font-size: 11px;
+    padding: 5px 8px; border-radius: 3px; outline: none;
+  }
+  .config-row select:focus,
+  .config-row input:focus { border-color: var(--accent); }
+
+  #status { font-size: 10px; color: #555; margin-bottom: 10px; min-height: 14px; letter-spacing: 0.08em; }
+  #status.ok  { color: #00c97a; }
+  #status.err { color: var(--accent2); }
+
+  .btn {
+    width: 100%; border: none; font-family: var(--lf); font-size: 12px;
+    letter-spacing: 0.1em; padding: 8px; cursor: pointer; border-radius: 3px;
+  }
+  .btn-primary { background: var(--accent); color: #000; margin-top: 4px; }
+  .btn-primary:hover { filter: brightness(1.15); }
+  .btn-primary:disabled { opacity: 0.4; cursor: default; }
+  .btn-ghost {
+    background: transparent; color: #444; border: 1px solid #1e1e2e; margin-top: 8px;
+  }
+  .btn-ghost:hover { color: var(--accent2); border-color: var(--accent2); }
+</style>
+</head>
+<body>
+
+<div id="layout">
+  <div class="slot" id="main-slot">
+    <div class="no-signal" id="main-nosignal">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+        <rect x="2" y="7" width="15" height="11" rx="2"/><path d="M17 9l5-3v12l-5-3"/>
+      </svg>NO SIGNAL
+    </div>
+    <video id="main-video" autoplay muted playsinline></video>
+    <span class="cam-label" id="main-label">CAM 1</span>
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="rec"><div class="dot"></div>LIVE</div>
+  </div>
+
+  <div id="right-col">
+    <div class="slot">
+      <div class="no-signal" id="sl-nosignal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+          <rect x="2" y="7" width="15" height="11" rx="2"/><path d="M17 9l5-3v12l-5-3"/>
+        </svg>NO SIGNAL
+      </div>
+      <video id="sl-video" autoplay muted playsinline></video>
+      <span class="cam-label" id="sl-label">CAM 3</span>
+      <div class="rec"><div class="dot"></div>LIVE</div>
+      <button class="swap-btn" onclick="doSwap('left')">⇅ SWAP TO MAIN</button>
+    </div>
+
+    <div class="slot">
+      <div class="no-signal" id="sr-nosignal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+          <rect x="2" y="7" width="15" height="11" rx="2"/><path d="M17 9l5-3v12l-5-3"/>
+        </svg>NO SIGNAL
+      </div>
+      <video id="sr-video" autoplay muted playsinline></video>
+      <span class="cam-label" id="sr-label">CAM 2</span>
+      <div class="rec"><div class="dot"></div>LIVE</div>
+      <button class="swap-btn" onclick="doSwap('right')">⇅ SWAP TO MAIN</button>
+    </div>
+  </div>
+</div>
+
+<!-- config toggle: shown only when ?config=1 AND password accepted -->
+<button id="config-toggle" onclick="toggleConfig()">⚙ CONFIG</button>
+
+<div id="config-panel">
+  <h3>Camera Setup</h3>
+  <div id="status"></div>
+
+  <!-- password gate (shown first) -->
+  <div id="pw-gate">
+    <div class="config-row">
+      <label>Password</label>
+      <input type="password" id="pw-input" placeholder="enter password"
+             onkeydown="if(event.key==='Enter') unlockConfig()"/>
+    </div>
+    <button class="btn btn-primary" onclick="unlockConfig()">Unlock</button>
+  </div>
+
+  <!-- camera form (shown after successful auth) -->
+  <div id="cam-form">
+    <div class="config-row"><label>CAM 1</label><select id="sel-cam1"></select></div>
+    <div class="config-row"><label>CAM 2</label><select id="sel-cam2"></select></div>
+    <div class="config-row"><label>CAM 3</label><select id="sel-cam3"></select></div>
+    <div class="config-row">
+      <label>CRT fx</label>
+      <label style="color:#ccc;cursor:pointer">
+        <input type="checkbox" id="crt-toggle" style="accent-color:var(--accent);margin-right:6px">
+        Scanline overlay
+      </label>
+    </div>
+    <button class="btn btn-primary" id="apply-btn" onclick="applyConfig()">Apply &amp; Save</button>
+    <button class="btn btn-ghost" onclick="resetSlots()">Reset slot assignments</button>
+  </div>
+</div>
+
+<script>
+// ── Camera streams (local, getUserMedia) ───────────────────────
+const streams = {};
+
+async function startCam(idx, deviceId) {
+  if (streams[idx]) { streams[idx].getTracks().forEach(t => t.stop()); delete streams[idx]; }
+  if (!deviceId) return;
+  try {
+    streams[idx] = await navigator.mediaDevices.getUserMedia({
+      video: { deviceId: { ideal: deviceId } }, audio: false
+    });
+  } catch(e) { console.warn(`Cam ${idx}:`, e); }
+}
+
+function attachVideo(videoEl, nosignalEl, idx) {
+  const s = streams[idx];
+  if (s) { videoEl.srcObject = s; nosignalEl.style.display = 'none'; videoEl.style.display = 'block'; }
+  else   { videoEl.srcObject = null; nosignalEl.style.display = 'flex'; videoEl.style.display = 'none'; }
+}
+
+// ── Server state ───────────────────────────────────────────────
+let serverState = { main: 1, smallLeft: 3, smallRight: 2, camDevices: {1:'',2:'',3:''} };
+
+async function fetchState() {
+  try {
+    const r = await fetch('/state');
+    if (r.ok) return await r.json();
+  } catch(e) {}
+  return null;
+}
+
+async function applyState(s) {
+  if (!s) return;
+  const prev = serverState;
+  serverState = s;
+
+  const names = { 1: 'CAM 1', 2: 'CAM 2', 3: 'CAM 3' };
+
+  // Restart only cameras whose deviceId actually changed
+  for (const idx of [1,2,3]) {
+    const newId = (s.camDevices || {})[idx] || '';
+    const oldId = (prev.camDevices || {})[idx] || '';
+    if (newId !== oldId) await startCam(idx, newId);
+  }
+
+  // Re-attach only slots whose camera assignment changed
+  if (s.main !== prev.main || !document.getElementById('main-video').srcObject) {
+    attachVideo(document.getElementById('main-video'), document.getElementById('main-nosignal'), s.main);
+    document.getElementById('main-label').textContent = names[s.main];
+  }
+  if (s.smallLeft !== prev.smallLeft || !document.getElementById('sl-video').srcObject) {
+    attachVideo(document.getElementById('sl-video'), document.getElementById('sl-nosignal'), s.smallLeft);
+    document.getElementById('sl-label').textContent = names[s.smallLeft];
+  }
+  if (s.smallRight !== prev.smallRight || !document.getElementById('sr-video').srcObject) {
+    attachVideo(document.getElementById('sr-video'), document.getElementById('sr-nosignal'), s.smallRight);
+    document.getElementById('sr-label').textContent = names[s.smallRight];
+  }
+
+  // CRT scanline toggle
+  const mainSlot = document.getElementById('main-slot');
+  if (s.crt !== false) mainSlot.classList.add('crt');
+  else                 mainSlot.classList.remove('crt');
+  const cb = document.getElementById('crt-toggle');
+  if (cb) cb.checked = (s.crt !== false);
+}
+
+// ── Polling (every 1 s) ────────────────────────────────────────
+setInterval(async () => {
+  const s = await fetchState();
+  if (s) applyState(s);
+}, 1000);
+
+// ── Swap (POST to server) ──────────────────────────────────────
+async function doSwap(side) {
+  try {
+    const r = await fetch('/swap', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ side })
+    });
+    if (r.ok) applyState(await r.json());
+  } catch(e) { console.warn('Swap failed:', e); }
+}
+
+// ── Config panel (only if ?config=1) ──────────────────────────
+const isConfigMode = new URLSearchParams(location.search).get('config') === '1';
+if (isConfigMode) document.getElementById('config-toggle').style.display = 'block';
+
+function toggleConfig() { document.getElementById('config-panel').classList.toggle('open'); }
+function setStatus(msg, type) {
+  const el = document.getElementById('status');
+  el.textContent = msg; el.className = type || '';
+}
+
+// ── Password unlock ────────────────────────────────────────────
+// We verify by attempting a /config POST with no changes — server returns 200 or 403
+let verifiedPassword = null;
+
+async function unlockConfig() {
+  const pw = document.getElementById('pw-input').value;
+  setStatus('Checking…');
+  try {
+    const r = await fetch('/config', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: pw })
+    });
+    if (r.ok) {
+      verifiedPassword = pw;
+      document.getElementById('pw-gate').style.display = 'none';
+      document.getElementById('cam-form').style.display = 'block';
+      setStatus('Authenticated', 'ok');
+      await populateSelectors();
+    } else {
+      setStatus('Wrong password', 'err');
+    }
+  } catch(e) { setStatus('Server unreachable', 'err'); }
+}
+
+// ── Populate camera selectors ──────────────────────────────────
+async function populateSelectors() {
+  setStatus('Enumerating cameras…');
+  let tmp;
+  try {
+    tmp = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+  } catch(e) { setStatus('Camera permission denied', 'err'); return; }
+  finally { if (tmp) tmp.getTracks().forEach(t => t.stop()); }
+
+  const devices = (await navigator.mediaDevices.enumerateDevices()).filter(d => d.kind === 'videoinput');
+  setStatus(`${devices.length} camera(s) found`, 'ok');
+
+  ['sel-cam1','sel-cam2','sel-cam3'].forEach((id, i) => {
+    const sel = document.getElementById(id);
+    const saved = (serverState.camDevices || {})[i + 1] || '';
+    sel.innerHTML = '<option value="">— none —</option>';
+    devices.forEach(d => {
+      const o = document.createElement('option');
+      o.value = d.deviceId;
+      o.textContent = d.label || `Camera ${d.deviceId.slice(0,8)}`;
+      if (d.deviceId === saved) o.selected = true;
+      sel.appendChild(o);
+    });
+  });
+}
+
+// ── Apply camera config ────────────────────────────────────────
+async function applyConfig() {
+  const btn = document.getElementById('apply-btn');
+  btn.disabled = true;
+  setStatus('Saving…');
+  const camDevices = {
+    1: document.getElementById('sel-cam1').value,
+    2: document.getElementById('sel-cam2').value,
+    3: document.getElementById('sel-cam3').value
+  };
+  try {
+    const r = await fetch('/config', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: verifiedPassword, camDevices, crt: document.getElementById('crt-toggle').checked })
+    });
+    if (r.ok) {
+      setStatus('Saved', 'ok');
+      const s = await fetchState();
+      if (s) await applyState(s);
+      setTimeout(() => document.getElementById('config-panel').classList.remove('open'), 800);
+    } else {
+      setStatus('Save failed', 'err');
+    }
+  } catch(e) { setStatus('Server unreachable', 'err'); }
+  btn.disabled = false;
+}
+
+async function resetSlots() {
+  try {
+    await fetch('/swap', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({side:'reset'}) });
+  } catch(e) {}
+  // reset locally via two fetches isn't clean; just reload state
+  const s = await fetchState();
+  if (s) applyState(s);
+}
+
+// ── Boot ───────────────────────────────────────────────────────
+(async () => {
+  const s = await fetchState();
+  if (s) {
+    // start cameras from saved deviceIds
+    await Promise.all([1,2,3].map(i => startCam(i, (s.camDevices||{})[i]||'')));
+    await applyState(s);
+  }
+})();
+</script>
+</body>
+</html>
